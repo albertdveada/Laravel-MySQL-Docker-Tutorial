@@ -76,7 +76,7 @@ Jika ingin menjalankan di *background* (opsional):
 **1. 🧱 Buat Project Laravel**
 Buka Terminal, lalu jalankan perintah di bawah ini (ganti ``nama-project`` sesuai keinginan):
    ```bash
-  curl -s https://laravel.build/nama-project | bash
+  curl -s "https://laravel.build/nama-project" | bash
   ```
 **2. 📁 Masuk ke Folder Project**
    ```bash
@@ -103,7 +103,9 @@ Pada file konfigurasi `.env`, terdapat pengaturan berikut:
 SESSION_DRIVER=database
   ```
 Artinya, Laravel akan menyimpan data sesi ke dalam database. Jika tabel untuk sesi belum dibuat, maka aplikasi bisa mengalami error saat mencoba menyimpan data sesi.
+
 **✅ Solusi**
+
 Jalankan perintah berikut untuk membuat tabel sesi yang dibutuhkan:
   ```bash
   ./vendor/bin/sail artisan session:table
