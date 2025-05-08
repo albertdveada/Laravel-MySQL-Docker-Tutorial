@@ -28,11 +28,12 @@ This repository provides a simple template to install Laravel and MySQL using Do
 
 ## 🪟 Laravel Sail on Windows (Windows Users)
 
-Before using **Laravel Sail**, make sure **WSL (Windows Subsystem for Linux)** and Docker Desktop are installed and active:  
+Before using **Laravel Sail**, make sure **WSL (Windows Subsystem for Linux)** and Docker Desktop are installed and active:
 **📌 WSL Activation Guide:**  
 👉 [How to Enable WSL](https://learn.microsoft.com/en-us/windows/wsl/install)
 
-**1. ✅ Check WSL Installation**  
+**1. ✅ Check WSL Installation**
+
 If WSL is installed successfully, you'll see a message like:
    ```powershell
   Downloading: Ubuntu
@@ -40,11 +41,13 @@ If WSL is installed successfully, you'll see a message like:
   Distribution successfully installed. It can be launched via 'wsl.exe -d Ubuntu'
   ```
 **2. 🖥️ Open WSL**
+
 Do not open from PowerShell or CMD.
 - Press the ``🪟``(Windows) key
 - Type ``Ubuntu`` or ``WSL``, then launch the application
 
 **3. 📁 Access Project Folder**
+
 Windows folders are ``mounted`` in WSL under ``/mnt``.
 **Example:**
 If your project is in ``D:\ProjectLaravel``, run:
@@ -52,6 +55,7 @@ If your project is in ``D:\ProjectLaravel``, run:
   cd /mnt/d/ProjectLaravel
   ```
 **⚙️ Install Laravel with Sail**
+
 Replace ``nama-project`` with your desired project name:
    ```bash
   curl -s https://laravel.build/nama-project | bash
@@ -61,6 +65,7 @@ Enter the project folder:
   cd nama-project
   ```
 **5. 🚀 Run Laravel**
+
 Activate Sail with:
    ```bash
   ./vendor/bin/sail up
@@ -74,8 +79,8 @@ To run it in the background (optional):
 
 ## 🍎 Laravel Sail on macOS (macOS Users)
 
-
 **1. 🧱 Create Laravel Project**
+
 Open Terminal and run the following command (replace ``nama-project`` as desired):
    ```bash
   curl -s "https://laravel.build/nama-project" | bash
