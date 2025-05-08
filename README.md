@@ -1,5 +1,7 @@
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
+**[ [🇮🇩 INDONESIAN LANGUAGE VERSION](https://translate.google.com/translate?hl=&sl=en&tl=id&u=https://github.com/albertdveada/Tutorial-Docker-Laravel-MySQL) ]**
+
 <p align="center">
 <a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
@@ -7,119 +9,119 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-# Instalasi Laravel & MySQL dengan Docker
+# Laravel & MySQL Installation with Docker
 
-Repository ini menyediakan template sederhana untuk instalasi Laravel dan MySQL menggunakan Docker. Cocok untuk pemula maupun pengembang yang membutuhkan setup lingkungan pengembangan yang cepat, terisolasi, dan konsisten.
+This repository provides a simple template to install Laravel and MySQL using Docker. It's suitable for beginners and developers who need a quick, isolated, and consistent development environment.
 
 ---
 
-## 🚀 Langkah-langkah Penggunaan
+## 🚀 Getting Started
 
-### Instalasi Docker
+### Install Docker
 
 - **Download Docker Desktop**:  
   👉 [Download Docker](https://www.docker.com/products/docker-desktop)  
-- **Panduan Penggunaan**:  
+- **Usage Guide**:  
   👉 [Docker Documentation](https://docs.docker.com/get-started) 
 
 ---
-   
-## 🪟 Laravel Sail di Windows (Pengguna Windows)
 
-Sebelum menggunakan **Laravel Sail**, pastikan **WSL (Windows Subsystem for Linux)** dan Docker Desktop sudah terinstal dan aktif:
-**📌 Panduan aktivasi WSL:**
-👉[Cara Mengaktifkan WSL](https://learn.microsoft.com/en-us/windows/wsl/install)
+## 🪟 Laravel Sail on Windows (Windows Users)
 
-**1. ✅ Cek Instalasi WSL**
-Jika instalasi WSL berhasil, Anda akan melihat pesan seperti:
+Before using **Laravel Sail**, make sure **WSL (Windows Subsystem for Linux)** and Docker Desktop are installed and active:  
+**📌 WSL Activation Guide:**  
+👉 [How to Enable WSL](https://learn.microsoft.com/en-us/windows/wsl/install)
+
+**1. ✅ Check WSL Installation**  
+If WSL is installed successfully, you'll see a message like:
    ```powershell
   Downloading: Ubuntu
   Installing: Ubuntu
   Distribution successfully installed. It can be launched via 'wsl.exe -d Ubuntu'
   ```
-**2. 🖥️ Buka WSL**
-Jangan buka dari PowerShell atau CMD.
-- Tekan tombol ``🪟``(Windows)
-- Ketik ``Ubuntu`` atau ``WSL``, lalu buka aplikasinya
+**2. 🖥️ Open WSL**
+Do not open from PowerShell or CMD.
+- Press the ``🪟``(Windows) key
+- Type ``Ubuntu`` or ``WSL``, then launch the application
 
-**3. 📁 Akses Folder Project**
-Folder Windows akan di-``mount`` di dalam WSL pada ``/mnt``.
-**Contoh:**
-Jika project ada di ``D:\ProjectLaravel``, maka jalankan:
+**3. 📁 Access Project Folder**
+Windows folders are ``mounted`` in WSL under ``/mnt``.
+**Example:**
+If your project is in ``D:\ProjectLaravel``, run:
    ```bash
   cd /mnt/d/ProjectLaravel
   ```
-**⚙️ Install Laravel dengan Sail**
-Ganti ``nama-project`` sesuai keinginan:
+**⚙️ Install Laravel with Sail**
+Replace ``nama-project`` with your desired project name:
    ```bash
   curl -s https://laravel.build/nama-project | bash
   ```
-Masuk ke folder project:
+Enter the project folder:
    ```bash
   cd nama-project
   ```
-**5. 🚀 Jalankan Laravel**
-Aktifkan Sail dengan:
+**5. 🚀 Run Laravel**
+Activate Sail with:
    ```bash
   ./vendor/bin/sail up
   ```
-Jika ingin menjalankan di *background* (opsional):
+To run it in the background (optional):
    ```bash
   ./vendor/bin/sail up -d
   ```
 
 ---
 
-## 🍎 Laravel Sail di macOS (Pengguna macOS)
+## 🍎 Laravel Sail on macOS (macOS Users)
 
 
-**1. 🧱 Buat Project Laravel**
-Buka Terminal, lalu jalankan perintah di bawah ini (ganti ``nama-project`` sesuai keinginan):
+**1. 🧱 Create Laravel Project**
+Open Terminal and run the following command (replace ``nama-project`` as desired):
    ```bash
   curl -s "https://laravel.build/nama-project" | bash
   ```
-**2. 📁 Masuk ke Folder Project**
+**2. 📁 Enter the Project Folder**
    ```bash
   cd nama-project
   ```
-**3. 🚀 Jalankan Laravel Sail**
+**3. 🚀 Run Laravel Sail**
    ```bash
   ./vendor/bin/sail up
   ```
-  Jika ingin menjalankan di *background* (opsional):
+  To run in the *background* (optional):
   ```bash
   ./vendor/bin/sail up -d
   ```
 
 ---
 
-## ⚠️ Masalah Umum yang Sering Terjadi
+## ⚠️ Common Issues
 
-Sebelum mengakses `localhost`, pastikan Anda sudah menjalankan driver sesi **(session driver)** berbasis database.
+Before accessing `localhost`, ensure the **(session driver)** is set up using the database.
 
-### 🧠 Kenapa Ini Penting?
-Pada file konfigurasi `.env`, terdapat pengaturan berikut:
+### 🧠 Why Is This Important?
+In the `.env`, configuration file, you'll find the following setting:
 ```env
 SESSION_DRIVER=database
   ```
-Artinya, Laravel akan menyimpan data sesi ke dalam database. Jika tabel untuk sesi belum dibuat, maka aplikasi bisa mengalami error saat mencoba menyimpan data sesi.
+This means Laravel stores session data in the database. If the session table hasn't been created, the app may throw an error when trying to store session data.
 
-**✅ Solusi**
+**✅ Solution**
 
-Jalankan perintah berikut untuk membuat tabel sesi yang dibutuhkan:
+Run the following command to create the required session table:
   ```bash
   ./vendor/bin/sail artisan session:table
   ```
-Setelah itu, lanjutkan dengan menjalankan migrasi:
+Then, proceed with migration:
   ```bash
   ./vendor/bin/sail artisan migrate
   ```
-### 🔗 Akses Aplikasi & Database:
-- [🚀 Buka Aplikasi Laravel (localhost:8000)](http://localhost:8000)  
-- [🛠️ Buka phpMyAdmin (localhost:8088)](http://localhost:8088)
+### 🔗 Accessing the App & Database:
+- [🚀 Open Laravel App (localhost:8000)](http://localhost:8000)  
+- [🛠️ Open phpMyAdmin (localhost:8088)](http://localhost:8088)
 
-### 💡 Informasi Login Default phpMyAdmin
-Untuk mengetahui kredensial akses ke phpMyAdmin, silakan periksa file konfigurasi `.env`. Cari bagian berikut:
+### 💡 Default phpMyAdmin Login Info
+To check phpMyAdmin credentials, refer to your `.env`. file. Look for the following section:
 
 ```env
 DB_CONNECTION=mysql
@@ -130,26 +132,26 @@ DB_USERNAME=sail
 DB_PASSWORD=password
 ```
 
-## 🔎 Penjelasan Singkat Struktur Proyek
+## 🔎 Project Structure Overview
 
 - `docker-compose.yml`  
-  Berisi konfigurasi untuk menjalankan semua container yang dibutuhkan, seperti:
+  Contains configuration to run all required containers, including:
   - PHP (Laravel Sail)
   - MySQL
-  - phpMyAdmin (opsional untuk kemudahan akses database)
+  - phpMyAdmin (optional for easier database access)
 
 - `README.md`  
-  Berisi panduan lengkap mengenai:
-  - Cara instalasi dan setup proyek
-  - Perintah penting untuk menjalankan dan mengelola aplikasi
-  - Tips pemecahan masalah umum (troubleshooting)
+  Includes a complete guide on:
+  - How to install and set up the project
+  - Essential commands to manage the app
+  - Troubleshooting tips
 
 ---
 
-📌 **Catatan**:  
-Pastikan versi MySQL Anda sesuai dengan konfigurasi pada file `.env` dan `docker-compose.yml`. untuk referensi lebih lanjut, kunjungi dokumentasi resmi:
+📌 **Note**:  
+Make sure your MySQL version matches the one specified in the `.env` and `docker-compose.yml` files. For further references, check the official documentation:
 - [Laravel Documentation](https://laravel.com/docs)
 - [Docker Documentation](https://docs.docker.com)
 - [MySQL Documentation](https://dev.mysql.com/doc)
 
-Semoga tutorial ini bermanfaat! 😊
+Hope this tutorial helps! 😊
